@@ -74,4 +74,13 @@ public class GameManager : MonoBehaviour {
     isGamePaused = !isGamePaused;
     Actions.OnGamePause?.Invoke(isGamePaused);
   }
+
+  private class GameState {
+    public int playerScore { get; private set; }
+    public int hightScore { get; private set; }
+
+    virtual public GameState handleState() {
+      return this;
+    }
+  }
 }

@@ -1,7 +1,7 @@
 using Player = CustomTypes.Player;
 using UnityEngine;
 
-public class SkinManager : MonoBehaviour {
+public class SkinHandler : MonoBehaviour {
   private const string FLAPPING = "Flapping";
   private const string DEAD = "Dead";
 
