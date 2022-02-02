@@ -24,10 +24,6 @@ public class GameManager : MonoBehaviour {
   private void Update() {
     hasInput = (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0));
 
-    if (hasInput) {
-      Actions.OnPlayerChangeSkin?.Invoke(Player.Color.Red);
-    }
-
     if (!isGameStarted && hasInput) {
       OnGameStart();
     }

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class AnimationHandler : MonoBehaviour {
@@ -25,7 +24,6 @@ public class AnimationHandler : MonoBehaviour {
     //SoundManager.PlaySound(AssetsManager.Sound.Die, .5f);
     Actions.OnGameOver?.Invoke();
     ChangeAnimationState("Dead");
-    print("Colision with: " + collider);
   }
 
   private void ChangeAnimationState(string newAnimation) {
