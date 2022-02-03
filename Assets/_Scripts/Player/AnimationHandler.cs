@@ -1,13 +1,6 @@
 using UnityEngine;
 
-public class AnimationHandler : MonoBehaviour {
-  private string currentAnimaton;
-  private Animator animator;
-
-  private void Awake() {
-    animator = GetComponent<Animator>();
-  }
-
+public class AnimationHandler : AnimationBehaviour {
   private void OnEnable() {
     Actions.OnGameStart += OnGameStart;
   }
@@ -24,12 +17,5 @@ public class AnimationHandler : MonoBehaviour {
     //SoundManager.PlaySound(AssetsManager.Sound.Die, .5f);
     Actions.OnGameOver?.Invoke();
     ChangeAnimationState("Dead");
-  }
-
-  private void ChangeAnimationState(string newAnimation) {
-    if (currentAnimaton != newAnimation) {
-      animator.Play(newAnimation);
-      currentAnimaton = newAnimation;
-    }
   }
 }

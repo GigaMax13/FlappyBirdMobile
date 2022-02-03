@@ -1,13 +1,4 @@
-using UnityEngine;
-
-public class Title : MonoBehaviour {
-  private string currentAnimaton;
-  private Animator animator;
-
-  private void Awake() {
-    animator = GetComponent<Animator>();
-  }
-
+public class Title : AnimationBehaviour {
   private void OnEnable() {
     Actions.OnGameStart += OnGameStart;
   }
@@ -18,12 +9,5 @@ public class Title : MonoBehaviour {
 
   private void OnGameStart() {
     ChangeAnimationState("Hide");
-  }
-
-  private void ChangeAnimationState(string newAnimation) {
-    if (currentAnimaton != newAnimation) {
-      animator.Play(newAnimation);
-      currentAnimaton = newAnimation;
-    }
   }
 }
