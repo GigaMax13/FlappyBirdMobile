@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LoopingTexture : MonoBehaviour {
+public class PlaneLoopingTexture3D : MonoBehaviour {
   private Material material;
 
   [SerializeField]
