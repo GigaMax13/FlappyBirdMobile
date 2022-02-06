@@ -113,6 +113,7 @@ public class GameObjectAnchor : MonoBehaviour {
 
 #if UNITY_EDITOR
   void Update() {
+    print("Update");
     if (updateAnchorRoutine == null) {
       updateAnchorRoutine = UpdateAnchorAsync();
       StartCoroutine(updateAnchorRoutine);

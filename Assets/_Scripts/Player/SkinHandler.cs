@@ -27,7 +27,7 @@ public class SkinHandler : MonoBehaviour {
   private void OnPlayerChangeSkin(Player.Color color) {
     int key = (int)color;
 
-    if (lastSkinColor == key) return;
+    if (lastSkinColor == key || !AssetsManager.Instance.PlayerAssets.ContainsKey(key)) return;
 
     lastSkinColor = key;
 

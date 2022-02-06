@@ -8,7 +8,7 @@ public class MovementHandler : MonoBehaviour {
   [SerializeField]
   private float start = 1.5f;
   [SerializeField]
-  private float gravityScale = 1;
+  private float gravityScale = 1.5f;
   [SerializeField]
   private float jumpForce = 200;
 
@@ -49,7 +49,7 @@ public class MovementHandler : MonoBehaviour {
   }
 
   public void Jump(InputAction.CallbackContext context) {
-    if (_rigidBody.gravityScale == 0 || !context.performed) return;
+    if (_rigidBody.gravityScale == 0 || !context.started) return;
 
     _rigidBody.velocity = Vector2.zero;
     _rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);

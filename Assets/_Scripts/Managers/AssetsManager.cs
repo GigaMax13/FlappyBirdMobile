@@ -22,9 +22,13 @@ public class AssetsManager : MonoBehaviour {
 
   #region PIPE
   public Dictionary<int, Pipe.Asset> PipeAssets { get; private set; }
+  public Transform Pipe => pfPipe;
 
   [SerializeField]
   private Pipe.Asset[] _pipeAssets;
+
+  [SerializeField]
+  private Transform pfPipe;
   #endregion
 
   private void Awake() {
