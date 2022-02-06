@@ -16,8 +16,8 @@ using System;
  */
 
 public class LevelManager : MonoBehaviour {
-  private const float MAX_PIPE_SPAWN_TIMER = 2;
-  private const float MIN_PIPE_SPAWN_TIMER = 1.2f;
+  private const float MAX_PIPE_SPAWN_TIMER = 1.5f;
+  private const float MIN_PIPE_SPAWN_TIMER = 1;
   private const float MIN_GAP_POS = -3.5f;
   private const float PIPE_X_POSITION = 4;
   private const float PIPE_HEIGHT = 8.8f;
@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour {
   private float pipeGapSize;
   private int pipesSpawned;
   private float speed = 3;
-  private float lastGapY;
+  //private float lastGapY;
   private Vector2 resolution;
 
   private bool isGameRunning = false;
@@ -73,7 +73,7 @@ public class LevelManager : MonoBehaviour {
     pipeGapSize = START_GAP;
     isGameRunning = true;
     pipesSpawned = 0;
-    lastGapY = (float)Math.PI;
+    //lastGapY = (float)Math.PI;
   }
 
   private void OnGamePause(bool isPaused) {
@@ -133,9 +133,10 @@ public class LevelManager : MonoBehaviour {
     //  gapY = MathF.Min(gapY, maxNextGap);
     //}
 
+    //lastGapY = gapY;
+
     pipes.Add(new Pipe(x, gapY + gapSize + PIPE_HEIGHT, false));
     pipes.Add(new Pipe(x, gapY - PIPE_HEIGHT));
-    lastGapY = gapY;
   }
 
   private void DestroyPipes() {
