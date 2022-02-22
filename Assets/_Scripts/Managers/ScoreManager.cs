@@ -13,11 +13,26 @@ public class ScoreManager : MonoBehaviour {
 
   private void OnGameStart() {
     score = 0;
+    ShowScore();
   }
 
   private void OnTriggerEnter2D(Collider2D collider) {
     if (collider.tag == "Pipe") {
-      Actions.OnPlayerScore?.Invoke(++score);
+      score++;
+
+      ShowScore();
+      Actions.OnPlayerScore?.Invoke(score);
+    }
+  }
+
+  private void ShowScore() {
+    string scoreValue = score.ToString();
+    int length = scoreValue.Length;
+
+    AssetsManager.Instance.ScoreUI[length - 1].SetValue(scoreValue);
+
+    for (int i = 0; i < length; i++) {
+      AssetsManager.Instance.ScoreUI[i].SetActive(i == length - 1);
     }
   }
 }

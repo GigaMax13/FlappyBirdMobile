@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using ScoreUI = CustomTypes.ScoreUI;
 using Player = CustomTypes.Player;
 using Pipe = CustomTypes.Pipe;
 using CustomTypes;
@@ -29,6 +30,16 @@ public class AssetsManager : MonoBehaviour {
 
   [SerializeField]
   private Transform pfPipe;
+  #endregion
+
+  #region SCORE
+  public ScoreUI.UI[] ScoreUI => _scoreUI;
+  public ScoreUI.Asset[] ScoreUIAssets => _scoreUIAssets;
+
+  [SerializeField]
+  private ScoreUI.UI[] _scoreUI;
+  [SerializeField]
+  private ScoreUI.Asset[] _scoreUIAssets;
   #endregion
 
   private void Awake() {
