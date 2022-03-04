@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class ScoreManager : MonoBehaviour {
   private int score;
@@ -21,7 +22,7 @@ public class ScoreManager : MonoBehaviour {
       score++;
 
       ShowScore();
-      SoundManager.Instance.PlaySound(CustomTypes.Audio.Type.Point, .15f);
+      SoundManager.Instance.PlaySound(CustomTypes.Audio.Type.Point, .1f);
       Actions.OnPlayerScore?.Invoke(score);
     }
   }
@@ -30,9 +31,11 @@ public class ScoreManager : MonoBehaviour {
     string scoreValue = score.ToString();
     int length = scoreValue.Length;
 
+    print(string.Format("Score: {0}, Length: {1}", scoreValue, length));
+
     AssetsManager.Instance.ScoreUI[length - 1].SetValue(scoreValue);
 
-    for (int i = 0; i < length; i++) {
+    for (int i = 0; i < AssetsManager.Instance.ScoreUI.Length; i++) {
       AssetsManager.Instance.ScoreUI[i].SetActive(i == length - 1);
     }
   }

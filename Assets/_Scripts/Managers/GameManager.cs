@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour {
 
   private void UpdatePlayerScore(int newScore) {
     playerScore = newScore;
-    print(string.Format("Score: {0}", playerScore));
   }
 
   private void OnGameStart() {

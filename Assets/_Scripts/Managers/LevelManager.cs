@@ -100,7 +100,7 @@ public class LevelManager : MonoBehaviour {
       pipeNextSpawnTimer = Mathf.Max((float)Math.Round(pipeNextSpawnTimer - .1f, 1), MIN_PIPE_SPAWN_TIMER);
       pipeGapSize = Mathf.Max((float)Math.Round(pipeGapSize - .1f, 1), MIN_GAP);
 
-      print(String.Format("Size: {0}, Timer: {1}", pipeGapSize, pipeNextSpawnTimer));
+      //print(string.Format("Size: {0}, Timer: {1}", pipeGapSize, pipeNextSpawnTimer));
     }
   }
 
