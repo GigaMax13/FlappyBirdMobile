@@ -3,6 +3,7 @@ using UnityEngine;
 
 using ScoreUI = CustomTypes.ScoreUI;
 using Player = CustomTypes.Player;
+using Audio = CustomTypes.Audio;
 using Pipe = CustomTypes.Pipe;
 using CustomTypes;
 
@@ -42,6 +43,21 @@ public class AssetsManager : MonoBehaviour {
   private ScoreUI.Asset[] _scoreUIAssets;
   #endregion
 
+  #region AUDIO
+  public AudioClip Sounds(Audio.Type sound) {
+    foreach (Audio.SoundAudioClip soundAudioClip in _sounds) {
+      if (soundAudioClip.type == sound) {
+        return soundAudioClip.audioClip;
+      }
+    }
+
+    return null;
+  }
+
+  [SerializeField]
+  private Audio.SoundAudioClip[] _sounds;
+  #endregion
+
   private void Awake() {
     _instance = this;
 
@@ -50,7 +66,7 @@ public class AssetsManager : MonoBehaviour {
   }
 
   private Dictionary<int, A> setAssetDictionary<A>(A[] arr)
-    where A : IAsset {
+    where A : IAssetColor {
     Dictionary<int, A> dic = new Dictionary<int, A>();
 
     foreach (A asset in arr) {

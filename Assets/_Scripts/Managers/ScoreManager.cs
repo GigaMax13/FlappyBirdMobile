@@ -21,6 +21,7 @@ public class ScoreManager : MonoBehaviour {
       score++;
 
       ShowScore();
+      SoundManager.Instance.PlaySound(CustomTypes.Audio.Type.Point, .15f);
       Actions.OnPlayerScore?.Invoke(score);
     }
   }

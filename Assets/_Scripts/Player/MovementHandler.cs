@@ -51,6 +51,7 @@ public class MovementHandler : MonoBehaviour {
   public void Jump(InputAction.CallbackContext context) {
     if (_rigidBody.gravityScale == 0 || !context.started) return;
 
+    SoundManager.Instance.PlaySound(CustomTypes.Audio.Type.Flappy, .1f);
     _rigidBody.velocity = Vector2.zero;
     _rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
   }

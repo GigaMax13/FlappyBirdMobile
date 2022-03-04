@@ -207,6 +207,13 @@ MonoBehaviour:
   - sprite: {fileID: 21300000, guid: 5be6c37ec6fb6493ba3d28499a3c87c6, type: 3}
   - sprite: {fileID: 21300000, guid: eba24fa9062b74c158e667f19e1adf2a, type: 3}
   - sprite: {fileID: 21300000, guid: 532845154ecfa440eb199354c55f774b, type: 3}
+  _sounds:
+  - audioClip: {fileID: 8300000, guid: fc3de917a79e04e28a88be59df821551, type: 3}
+    sound: 0
+  - audioClip: {fileID: 8300000, guid: 2a9b824fbf9e24358bb41dd038bcc792, type: 3}
+    sound: 1
+  - audioClip: {fileID: 8300000, guid: 0ea6b474214b34e5ab49ec63f543d166, type: 3}
+    sound: 2
 --- !u!1 &101198026
 GameObject:
   m_ObjectHideFlags: 0

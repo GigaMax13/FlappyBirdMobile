@@ -14,7 +14,7 @@ public class AnimationHandler : AnimationBehaviour {
   }
 
   private void OnTriggerEnter2D(Collider2D collider) {
-    //SoundManager.PlaySound(AssetsManager.Sound.Die, .5f);
+    SoundManager.Instance.PlaySound(CustomTypes.Audio.Type.Die, .5f);
     Actions.OnGameOver?.Invoke();
     ChangeAnimationState("Dead");
   }

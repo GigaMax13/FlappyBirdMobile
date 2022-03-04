@@ -3,7 +3,7 @@ using UnityEngine;
 using System;
 
 namespace CustomTypes {
-  public interface IAsset {
+  public interface IAssetColor {
     private enum Color { }
     public int color { get; }
   }
@@ -16,7 +16,7 @@ namespace CustomTypes {
     }
 
     [Serializable]
-    public class Asset : IAsset {
+    public class Asset : IAssetColor {
       [SerializeField]
       private Color selectedColor;
       public AnimationClip flapping;
@@ -32,7 +32,7 @@ namespace CustomTypes {
     }
 
     [Serializable]
-    public class Asset : IAsset {
+    public class Asset : IAssetColor {
       [SerializeField]
       private Color selectedColor;
       public Sprite sprite;
@@ -75,6 +75,20 @@ namespace CustomTypes {
           unit.sprite = AssetsManager.Instance.ScoreUIAssets[Int32.Parse(value[2].ToString())].sprite;
         }
       }
+    }
+  }
+
+  namespace Audio {
+    public enum Type {
+      Flappy,
+      Point,
+      Die
+    }
+
+    [Serializable]
+    public class SoundAudioClip {
+      public AudioClip audioClip;
+      public Type type;
     }
   }
 }
