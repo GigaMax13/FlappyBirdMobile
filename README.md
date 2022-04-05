@@ -1,4 +1,4 @@
-# FlappyBirdCloneOne
+# FlappyBirdMobile
 
 This game was made only for academic proposal. I don't have any right over the assets used.
 All the assets I used in this project was from Code Monkey's [video](https://www.youtube.com/watch?v=b5Wpni9KPik) and a [repo](https://github.com/samuelcust/flappy-bird-assets) I found on GitHub.
