@@ -29,7 +29,8 @@ public class SoundManager : MonoBehaviour {
       _sounds.Add(gameObject);
 
       audioSource.PlayOneShot(audio, volume);
-      Invoke("deleteSoundObject", audio.length + .5f);
+
+      Invoke(nameof(deleteSoundObject), audio.length + .5f);
     }
   }
 
